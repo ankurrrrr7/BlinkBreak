@@ -1,0 +1,11 @@
+{
+    "name":"Blink Break",
+    "version":"1.0.0",
+    "description":"A Chrome extension that helps protect your eyes!!",
+    "manifest_version":3,
+    "author":"Ankur Jha",
+    "action":{
+        "default_popup":"/frontend/index.html",
+        "default_title":"Blink Break"
+    }
+}
