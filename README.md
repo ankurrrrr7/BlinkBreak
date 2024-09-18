@@ -6,4 +6,4 @@ Features (Version 1.0):
 -
 - Customizable Reminders
 - Activity Tracking
-- Focus Mode
+- Focus Mode (Don't disturb mode)
