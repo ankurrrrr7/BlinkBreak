@@ -1,5 +1,3 @@
-import { handleNotification } from "./notification.js";
-
 let intervalId; // To store the interval ID globally
 
 if ('serviceWorker' in navigator) {
@@ -13,6 +11,16 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+// handle notification
+const handleNotification = ()=>{
+    chrome.notifications.create({
+        type: 'basic',
+        iconUrl: '/logo.png', 
+        title: 'Time to Blink!',
+        message: 'Don’t forget to blink your eyes to protect them!',
+        priority: 2
+    });
+}
 
 
 document.getElementById("main-button").addEventListener("click", () => {
@@ -20,7 +28,7 @@ document.getElementById("main-button").addEventListener("click", () => {
     const input_value = document.getElementById('input-values').querySelector('input').value;
     const user_time = parseInt(input_value); 
 
-    // Validate input: must be a number greater than 0
+    
     if (!user_time || isNaN(user_time) || user_time <= 0) {
         alert("Please enter a valid number of seconds");
         return;
