@@ -22,7 +22,7 @@ const handleNotification = ()=>{
     });
 }
 
-
+// main click logic 
 document.getElementById("main-button").addEventListener("click", () => {
     // Get the input value in seconds
     const input_value = document.getElementById('input-values').querySelector('input').value;
@@ -46,3 +46,10 @@ document.getElementById("main-button").addEventListener("click", () => {
 
     console.log(`New interval set for ${user_time} seconds.`);
 });
+
+//notification stop
+document.getElementById('main-stop').addEventListener('click',()=>{
+    setTimeout(()=>{
+        handleNotification.close();
+    })
+},1000)
