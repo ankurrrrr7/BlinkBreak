@@ -4,10 +4,10 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
             .then(registration => {
-                console.log('Service Worker registered with scope:', registration.scope);
+                registration.scope
             })
             .catch(error => {
-                console.error('Service Worker registration failed:', error);
+                error;
             });
     });
 }
@@ -38,7 +38,7 @@ document.getElementById("main-button").addEventListener("click", () => {
 
     
     if (!user_time || isNaN(user_time) || user_time <= 0) {
-        alert("Please enter a valid number of seconds");
+        remainder();
         return;
     }
 
@@ -60,3 +60,30 @@ document.getElementById('main-stop').addEventListener('click',()=>{
     clearInterval(intervalId);
     updateNotification();
 })
+// remainder
+const remainder = () => {
+    // Check if the error message already exists to prevent duplicate messages
+    if (!document.getElementById('error-message')) {
+        const newChild = document.createElement("div");
+        const updateChild = "Please enter a valid number of seconds";
+        newChild.textContent = updateChild;
+
+        // Set an ID and styling for the error message
+        newChild.id = "error-message";
+        newChild.style.color = "red";
+        newChild.style.marginTop = "10px";
+        newChild.style.fontSize = "14px";
+
+        // Append the error message inside the appropriate section
+        const inputChild = document.getElementById("error");
+        inputChild.appendChild(newChild);
+
+        setTimeout(()=>{
+           const message = document.getElementById("error");
+           message.style.display ='none'
+        },3000);
+    }
+};
+
+
+
