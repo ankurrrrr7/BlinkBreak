@@ -1,12 +1,90 @@
+/* style.css */
 
-
-.main-header{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    color: #333;
+  }
+  
+  .main {
+    background-color: #ffffff;
+    width: 350px; /* Maintained width */
+    padding: 20px; /* Maintained padding */
+    border-radius: 15px; /* Increased for a smoother look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .main-header h2 {
+    font-size: 1.4rem; /* Maintained font size */
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .input-values input {
+    width: 80px; /* Maintained width */
+    padding: 10px; /* Maintained padding */
+    font-size: 1rem; /* Maintained font size */
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 25px;
+    outline: none;
+  }
+  
+  .main-footer h2 {
+    font-size: 1rem; /* Maintained font size */
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .main-button button,
+  #main-stop {
+    background-color: #007bff; /* Updated color */
+    color: #fff;
+    border: none;
+    padding: 12px 20px; /* Maintained padding */
+    font-size: 1rem; /* Maintained font size */
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  #error-message {
+    color: red;
+    font-size: 14px;
     margin-top: 10px;
-    margin-bottom: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-h2{
-    font-size: medium;
-   font-display: 20px;
-}
+  }
+  
+  .main-button button:hover,
+  #main-stop:hover {
+    background-color: #0056b3; /* Updated hover color */
+  }
+  
+  #main-stop {
+    background-color: #ff4d4f; /* Updated color */
+  }
+  
+  #main-stop:hover {
+    background-color: #d9363e; /* Updated hover color */
+  }
+  
+  .main-button,
+  #main-stop {
+    display: inline-block;
+    margin: 10px;
+  }
+  
