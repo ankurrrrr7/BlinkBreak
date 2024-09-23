@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 // handle notification
-const handleNotification = ()=>{
+const mainNotification = ()=>{
     chrome.notifications.create({
         type: 'basic',
         iconUrl: '/logo.png', 
@@ -21,7 +21,15 @@ const handleNotification = ()=>{
         priority: 2
     });
 }
-
+const updateNotification =()=>{
+    chrome.notifications.create({
+        type: 'basic',
+        iconUrl: '/logo.png', 
+        title: 'Update',
+        message: 'Blink remainder is stopped',
+        priority: 2
+    });
+}
 // main click logic 
 document.getElementById("main-button").addEventListener("click", () => {
     // Get the input value in seconds
@@ -41,7 +49,7 @@ document.getElementById("main-button").addEventListener("click", () => {
     }
 
     intervalId = setInterval(() => {
-        handleNotification();
+        mainNotification();
     }, user_time * 1000); // Convert seconds to milliseconds
 
     console.log(`New interval set for ${user_time} seconds.`);
@@ -49,7 +57,6 @@ document.getElementById("main-button").addEventListener("click", () => {
 
 //notification stop
 document.getElementById('main-stop').addEventListener('click',()=>{
-    setTimeout(()=>{
-        handleNotification.close();
-    })
-},1000)
+    clearInterval(intervalId);
+    updateNotification();
+})
