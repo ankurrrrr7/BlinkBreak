@@ -36,7 +36,6 @@ document.getElementById("main-button").addEventListener("click", () => {
     const input_value = document.getElementById('input-values').querySelector('input').value;
     const user_time = parseInt(input_value); 
 
-    
     if (!user_time || isNaN(user_time) || user_time <= 0) {
         remainder();
         return;
@@ -47,7 +46,7 @@ document.getElementById("main-button").addEventListener("click", () => {
         clearInterval(intervalId);
         console.log("Previous interval cleared.");
     }
-
+    
     intervalId = setInterval(() => {
         mainNotification();
     }, user_time * 1000); // Convert seconds to milliseconds
@@ -79,8 +78,7 @@ const remainder = () => {
         inputChild.appendChild(newChild);
 
         setTimeout(()=>{
-           const message = document.getElementById("error");
-           message.style.display ='none'
+           inputChild.style.display ='none'
         },3000);
     }
 };
