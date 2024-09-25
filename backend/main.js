@@ -61,7 +61,7 @@ document.getElementById("main-button").addEventListener("click", () => {
 });
 
 //notification stop
-document.getElementById('main-stop').addEventListener('click',()=>{
+document.getElementById('mainstop').addEventListener('click',()=>{
     clearInterval(intervalId);
     updateNotification();
 })
