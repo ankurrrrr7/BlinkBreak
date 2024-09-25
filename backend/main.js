@@ -11,6 +11,12 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+//opening settings in new page
+document.getElementById('opensetting').addEventListener('click', ()=>{
+    window.location.href = '/frontend/setting.html';
+});
+
+//back to new settings
 // handle notification
 const mainNotification = ()=>{
     chrome.notifications.create({
