@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dropdown and Navigation</title>
     <script src="/backend/setting.js" defer></script>
+    <style>
+        #myDropdown {
+            display: none; /* Hidden by default */
+
+        }
+        #myDropdown.show {
+            display: block; /* Show when .show class is added */
+        }
+    </style>
 </head>
 <body>
     <div id="settingbody">
-        <P>hello</P>
-    <button id="backToMain"> back</button>
+        <p>Hello</p>
+        <button id="backToMain">Back</button>
     </div>
-    
+    <button id="drop">Dropdown</button>
+    <div id="myDropdown">
+        <button>Default</button>
+        <button>Hindi</button>
+    </div>
 </body>
 </html>
