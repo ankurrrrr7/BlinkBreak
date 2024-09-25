@@ -51,7 +51,7 @@
   }
   
   .main-button button,
-  #main-stop {
+  #mainstop {
     background-color: #007bff; /* Updated color */
     color: #fff;
     border: none;
@@ -71,20 +71,20 @@
   }
   
   .main-button button:hover,
-  #main-stop:hover {
+  #mainstop:hover {
     background-color: #0056b3; /* Updated hover color */
   }
   
-  #main-stop {
+  #mainstop {
     background-color: #ff4d4f; /* Updated color */
   }
   
-  #main-stop:hover {
+  #mainstop:hover {
     background-color: #d9363e; /* Updated hover color */
   }
   
   .main-button,
-  #main-stop {
+  #mainstop {
     display: inline-block;
     margin: 10px;
   }

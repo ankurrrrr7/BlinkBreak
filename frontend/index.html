@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Reducer App</title>
     <link rel="stylesheet" href="/frontend/style.css"> <!-- External CSS file -->
+    
 
 
 </head>
@@ -14,7 +15,7 @@
 
     <div class="main">
         <div class="main-header">
-            <H2>
+            <H2 id="content">
                 DON'T FORGET TO BLINK YOUR EYES AFTER
             </H2>
             <button id="opensetting">yo</button>
@@ -25,19 +26,19 @@
         <div id="error">
 
         </div>
-        <div id="main-footer" class="main-footer">
-            <h2>MINUTES</h2>
+        <div id="main-footer"  class="main-footer">
+            <h2 id="contentminute">MINUTES</h2>
         </div>
         <div id="main-button" class="main-button">
-            <button>Remind Me!!</button>
+            <button id="contentbutton1">Remind Me!!</button>
         </div>
         <div>
-            <button id="main-stop">Stop</button>
+            <button id="mainstop">Stop</button>
         </div>
     </div>
 
     <script type="module" src="/backend/main.js" defer></script>
-
+    <script src="/backend/transalator.js" defer></script>
 </body>
 
 </html>
