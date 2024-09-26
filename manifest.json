@@ -12,5 +12,8 @@
     "background": {
         "service_worker": "/backend/service-worker.js",
         "type": "module"
-    }
+    },
+    "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
 }
