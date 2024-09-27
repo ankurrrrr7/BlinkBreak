@@ -1,3 +1,4 @@
+
 let intervalId; // To store the interval ID globally
 
 if ('serviceWorker' in navigator) {
@@ -12,9 +13,15 @@ if ('serviceWorker' in navigator) {
     });
 }
 //opening settings in new page
-document.getElementById('opensetting').addEventListener('click', ()=>{
-    window.location.href = '/frontend/setting.html';
+document.addEventListener('DOMContentLoaded', () => {
+    const opensettingButton = document.getElementById('opensetting');
+    if (opensettingButton) {
+        opensettingButton.addEventListener('click', () => {
+            window.location.href = '/frontend/setting.html';
+        });
+    }
 });
+
 
 
 
@@ -39,34 +46,46 @@ const updateNotification =()=>{
     });
 }
 // main click logic 
-document.getElementById("main-button").addEventListener("click", () => {
-    // Get the input value in seconds
-    const input_value = document.getElementById('input-values').querySelector('input').value;
-    const user_time = parseInt(input_value); 
-
-    if (!user_time || isNaN(user_time) || user_time <= 0) {
-        remainder();
-        return;
-    }
-
-    // Clear the previous interval, if one exists
-    if (intervalId) {
-        clearInterval(intervalId);
-        console.log("Previous interval cleared.");
-    }
+document.addEventListener('click',()=>{
+    document.getElementById("main-button").addEventListener("click", () => {
+        // Get the input value in seconds
+        const input_value = document.getElementById('input-values').querySelector('input').value;
+        const user_time = parseInt(input_value); 
     
-    intervalId = setInterval(() => {
-        mainNotification();
-    }, user_time * 1000); // Convert seconds to milliseconds
+        if (!user_time || isNaN(user_time) || user_time <= 0) {
+            remainder();
+            return;
+        }
+    
+        // Clear the previous interval, if one exists
+        if (intervalId) {
+            clearInterval(intervalId);
+            console.log("Previous interval cleared.");
+        }
+        
+        intervalId = setInterval(() => {
+            mainNotification();
+        }, user_time * 1000); // Convert seconds to milliseconds
+    
+        console.log(`New interval set for ${user_time} seconds.`);
+    });
+})
 
-    console.log(`New interval set for ${user_time} seconds.`);
-});
 
 //notification stop
-document.getElementById('mainstop').addEventListener('click',()=>{
-    clearInterval(intervalId);
-    updateNotification();
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const stopButton = document.getElementById('mainstop');
+    if (stopButton) { // Check if the element exists
+        stopButton.addEventListener('click', () => {
+            clearInterval(intervalId);
+            updateNotification();
+        });
+    } else {
+        console.log("The mainstop element is not found in the DOM.");
+    }
+});
+
+
 // remainder
 const remainder = () => {
     // Check if the error message already exists to prevent duplicate messages
@@ -90,6 +109,15 @@ const remainder = () => {
         },3000);
     }
 };
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem("setLanguage") || 'en'; // Default to English
+    languageSelector.value = savedLanguage; // Set dropdown value
+    switchLanguage(savedLanguage); // Switch to the saved language
+});
+
+
+
+
 
 
 
