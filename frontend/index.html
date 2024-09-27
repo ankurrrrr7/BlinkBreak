@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Reducer App</title>
     <link rel="stylesheet" href="/frontend/style.css"> <!-- External CSS file -->
-    
-
-
 </head>
-
 <body>
-
     <div class="main">
         <div class="main-header">
-            <H2 id="content">
+            <h2 id="content">
                 DON'T FORGET TO BLINK YOUR EYES AFTER
-            </H2>
-            <button id="opensetting">yo</button>
+            </h2>
+            <button id="opensetting">Settings</button>
         </div>
         <div id="input-values" class="input-values">
             <input type="number">
         </div>
-        <div id="error">
-
-        </div>
-        <div id="main-footer"  class="main-footer">
+        <div id="error"></div>
+        <div id="main-footer" class="main-footer">
             <h2 id="contentminute">MINUTES</h2>
         </div>
         <div id="main-button" class="main-button">
@@ -36,9 +28,9 @@
             <button id="mainstop">Stop</button>
         </div>
     </div>
-
-    <script type="module" src="/backend/main.js" defer></script>
-    <script src="/backend/transalator.js" defer></script>
+    
+ 
+    <script src="/backend/transalator.js"></script>
+    <script type="module" src="/backend/main.js"></script>
 </body>
-
 </html>
