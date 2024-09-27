@@ -4,28 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dropdown and Navigation</title>
-    <style>
-        #myDropdown {
-            display: none; /* Hidden by default */
-        }
-        #myDropdown.show {
-            display: block; /* Show when .show class is added */
-        }
-    </style>
 </head>
 <body>
     <div id="settingbody">
         <p>Hello</p>
         <button id="backToMain">Back</button>
     </div>
-    <button id="drop">Dropdown</button>
-    <div id="myDropdown">
-        <button id="switchToEnglish" value="en">Default</button>
-        <button id="switchToHindi" value="hindi">Hindi</button>
-    </div>
+    <select id="myDropdown">
+        <option value="en">english</option>
+        <option value="hindi">hindi</option>
+    </select>
     
-
-    <script src="/backend/setting.js"></script>
     <script src="/backend/transalator.js"></script>
+    <script src="/backend/main.js"></script>
 </body>
 </html>

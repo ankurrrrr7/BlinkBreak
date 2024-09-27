@@ -1,91 +1,138 @@
-/* style.css */
+/* Global Styles */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-    color: #333;
-  }
-  
-  .main {
-    background-color: #ffffff;
-    width: 350px; /* Maintained width */
-    padding: 20px; /* Maintained padding */
-    border-radius: 15px; /* Increased for a smoother look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .main-header h2 {
-    font-size: 1.4rem; /* Maintained font size */
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 20px;
-  }
-  
-  .input-values input {
-    width: 80px; /* Maintained width */
-    padding: 10px; /* Maintained padding */
-    font-size: 1rem; /* Maintained font size */
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 25px;
-    outline: none;
-  }
-  
-  .main-footer h2 {
-    font-size: 1rem; /* Maintained font size */
-    font-weight: 500;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .main-button button,
-  #mainStop {
-    background-color: #007bff; /* Updated color */
-    color: #fff;
-    border: none;
-    padding: 12px 20px; /* Maintained padding */
-    font-size: 1rem; /* Maintained font size */
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-  }
-  
-  #error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  .main-button button:hover,
-  #mainStop:hover {
-    background-color: #0056b3; /* Updated hover color */
-  }
-  
-  #mainStop {
-    background-color: #ff4d4f; /* Updated color */
-  }
-  
-  #mainStop:hover {
-    background-color: #d9363e; /* Updated hover color */
-  }
-  
-  .main-button,
-  #mainStop {
-    display: inline-block;
-    margin: 10px;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+  width: 400px; /* Set a fixed width for the popup */
+  height: 300px; /* Set a fixed height for the popup */
+}
+
+.main {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; /* increase padding to make it more prominent */
+  border-bottom: 2px solid #ccc; /* increase border thickness to make it more noticeable */
+  /* add a light gray background to make it stand out */
+}
+
+#content {
+  font-size: 24px; /* increase font size to make it more prominent */
+  font-weight: bold; /* add bold font weight to make it more eye-catching */
+  color: #333; /* darken the text color to make it more readable */
+  margin-right: 20px; /* increase margin to make room for the settings button */
+}
+
+#opensetting {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px; /* increase font size to make it more prominent */
+  font-weight: bold; /* add bold font weight to make it more eye-catching */
+  cursor: pointer;
+  border-radius: 5px; /* add a subtle border radius to make it more rounded */
+  box-shadow: 0 0 2px #000; /* add a subtle box shadow to make it pop */
+}
+
+#opensetting:hover {
+  background-color: #3e8e41;
+}
+
+/* Input Styles */
+
+.input-values {
+  margin-top: 20px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+/* Error Styles */
+
+#error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Footer Styles */
+
+.main-footer {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+#contentminute {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Button Styles */
+
+.main-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#contentbutton1 {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#contentbutton1:hover {
+  background-color: #3e8e41;
+}
+
+/* Dropdown Styles */
+
+#myDropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+#mainstop {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Add a wrapper div to center the stop button */
+.stop-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* add some margin to separate from other elements */
+}
