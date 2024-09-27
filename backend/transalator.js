@@ -13,23 +13,34 @@ const translator = {
     },
 };
 
-function switchLanguage(language) {
-    // Assuming there are elements with these IDs in the main HTML
-    document.getElementById('content').innerText = translator[language].content || '';
-    console.log(document.getElementById('content'));
-    document.getElementById('contentminute').innerText = translator[language].contentminute || '';
-    document.getElementById('contentbutton1').innerText = translator[language].contentbutton1 || '';
-    document.getElementById('mainstop').innerText = translator[language].mainstop || '';
+ window.switchLanguage = function(language) {
+    const content = document.getElementById('content');
+    const contentMinute = document.getElementById('contentminute');
+    const contentButton1 = document.getElementById('contentbutton1');
+    const mainStop = document.getElementById('mainstop');
+
+    console.log(`Switching to language: ${language}`);
+    console.log('Translation data:', translator[language]);
+
+
+    if (translator[language]) {
+        if (content) {
+            content.innerText = translator[language].content;
+            console.log('Updated content:', content.innerText);
+        }
+        if (contentMinute) {
+            contentMinute.innerText = translator[language].contentminute;
+            console.log('Updated contentMinute:', contentMinute.innerText);
+        }
+        if (contentButton1) {
+            contentButton1.innerText = translator[language].contentbutton1;
+            console.log('Updated contentButton1:', contentButton1.innerText);
+        }
+        if (mainStop) {
+            mainStop.innerText = translator[language].mainstop;
+            console.log('Updated mainStop:', mainStop.innerText);
+        }
+    } else {
+        console.error('Language not found:', language);
+    }
 }
-
-// Add event listeners to dropdown buttons after the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('#myDropdown button').forEach(button => {
-        button.addEventListener('click', (event) => {
-            switchLanguage(event.target.value);
-        });
-    });
-});
-
-// Initially switch to English
-switchLanguage("en");

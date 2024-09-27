@@ -16,6 +16,8 @@ document.getElementById('opensetting').addEventListener('click', ()=>{
     window.location.href = '/frontend/setting.html';
 });
 
+
+
 //back to new settings
 // handle notification
 const mainNotification = ()=>{
