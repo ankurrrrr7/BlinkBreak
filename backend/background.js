@@ -57,7 +57,7 @@ function showNotification(title, message) {
       type: "basic",
       iconUrl: chrome.runtime.getURL("logo.png"),
       title: "Blink Reminder ",
-      message: "Blink your eye and stay Healthy!!",
+      message: "Blink your eye 20 FEET AWAY!!",
       priority: 2,
     },
     (notificationId) => {
