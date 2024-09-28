@@ -30,9 +30,7 @@ function applyLanguage(language) {
 
 // Set language in storage
 function setLanguage(language) {
-    chrome.storage.local.set({ selectedLanguage: language }, () => {
-        console.log(`Language set to ${language}`);
-    });
+    chrome.storage.local.set({ selectedLanguage: language });
 }
 
 // Get language from storage

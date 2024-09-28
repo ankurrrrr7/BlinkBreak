@@ -11,3 +11,4 @@ self.addEventListener('fetch', (event) => {
     // Handle fetch events, such as caching strategies
     console.log('Fetching:', event.request.url);
 });
+
