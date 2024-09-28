@@ -1,13 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const backToMainButton = document.getElementById('backToMain');
-    if (backToMainButton) {
-        backToMainButton.addEventListener('click', () => {
-            window.location.href = '/frontend/index.html';
-        });
-    }
-});
-
-
 const translator = {
     en: {
         content: "DON'T FORGET TO BLINK YOUR EYES AFTER",
@@ -23,34 +13,43 @@ const translator = {
     },
 };
 
-const languageSelector = document.getElementById('myDropdown');
+// Cache DOM elements for easy access
 const content = document.getElementById('content');
 const contentMinute = document.getElementById('contentminute');
 const contentButton1 = document.getElementById('contentbutton1');
 const mainStop = document.getElementById('mainstop');
+const languageSelector = document.getElementById('myDropdown');
 
+// Function to apply language settings
+function applyLanguage(language) {
+    content.innerText = translator[language].content;
+    contentMinute.innerText = translator[language].contentminute;
+    contentButton1.innerText = translator[language].contentbutton1;
+    mainStop.innerText = translator[language].mainstop;
+}
 
-window.switchLanguage = (language) => {
-    console.log(`Switching to language: ${language}`);
-    console.log('Translation data:', translator[language]);
+// Set language in storage
+function setLanguage(language) {
+    chrome.storage.local.set({ selectedLanguage: language }, () => {
+        console.log(`Language set to ${language}`);
+    });
+}
 
-    if (language === 'en') {
-        content.innerText = translator.en.content;
-        contentMinute.innerText = translator.en.contentminute;
-        contentButton1.innerText = translator.en.contentbutton1;
-        mainStop.innerText = translator.en.mainstop;
-    } else if (language === 'hindi') {
-        content.innerText = translator.hindi.content;
-        contentMinute.innerText = translator.hindi.contentminute;
-        contentButton1.innerText = translator.hindi.contentbutton1;
-        mainStop.innerText = translator.hindi.mainstop;
-    } else {
-        console.error('Language not supported:', language);
-    }
-};
+// Get language from storage
+function getLanguage() {
+    chrome.storage.local.get(['selectedLanguage'], (result) => {
+        const language = result.selectedLanguage || 'en'; // Default to English
+        applyLanguage(language);
+        languageSelector.value = language; // Set the dropdown value
+    });
+}
 
-languageSelector.addEventListener("change", (event) => {
-    switchLanguage(event.target.value);
+// Change language on dropdown change
+languageSelector.addEventListener('change', function(event) {
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
+    applyLanguage(selectedLanguage);
 });
 
-switchLanguage('en');
+// Load the language when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', getLanguage);

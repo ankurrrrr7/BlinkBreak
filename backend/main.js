@@ -45,6 +45,10 @@ const updateNotification = () => {
 let warningShow = false;
 let intervalId = null;
 
+
+const input_value = document.getElementById('input-values').querySelector('input').value;
+const user_time = parseInt(input_value)
+
 // Wait until the DOM is fully loaded to attach event listeners
 document.addEventListener('DOMContentLoaded', () => {
     const contentButton = document.getElementById("contentbutton1");
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contentButton.addEventListener("click", () => {
             // Get the input value in seconds
             const input_value = document.getElementById('input-values').querySelector('input').value;
-            const user_time = parseInt(input_value);
+            const user_time = input_value;
 
             if (!user_time || isNaN(user_time) || user_time <= 0) {
                 remainder();
@@ -67,16 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(intervalId);
                 console.log("Previous interval cleared.");
             }
-            
-           
+            setTimeout(()=>{
+                mainNotification()
+            },1000);
+            setTimeout(()=>{
+                update()
+            },1000);
             intervalId = setInterval(() => {
                 mainNotification();
             }, user_time * 60000); // Convert seconds to milliseconds
 
-           console.log(update()); 
         });
     }
-
     // Stop notification logic
     if (stopButton) {
         stopButton.addEventListener('click', () => {
@@ -123,10 +129,10 @@ const remainder = () => {
 };
 
 const update =()=>{
-    if(document.getElementById("update-message")){
+    if(!document.getElementById("update-message")){
         const newChild = document.createElement("div");
         newChild.id = "update-message";
-        newChild.textContent ="Your Remainder has been set!!"
+        newChild.textContent =`Your Remainder has been set for ${user_time} minutes!!`
     
         newChild.style.color = "red";
         newChild.style.marginTop = "10px";
