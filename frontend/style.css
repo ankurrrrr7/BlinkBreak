@@ -12,14 +12,15 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: #f9f9f9;
-  width: 400px; /* Set a fixed width for the popup */
-  height: 300px; /* Set a fixed height for the popup */
+  width: 330px; /* Set a fixed width for the popup */
+  height: 250px; /* Set a fixed height for the popup */
 }
 
 .main {
-  padding: 20px;
+  width: 100%; /* Make the main container full width of body */
+  height: 100%; /* Make the main container full height of body */
+  padding: 10px; /* Adjust padding for smaller space */
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -30,109 +31,123 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; /* increase padding to make it more prominent */
-  border-bottom: 2px solid #ccc; /* increase border thickness to make it more noticeable */
-  /* add a light gray background to make it stand out */
 }
 
 #content {
-  font-size: 24px; /* increase font size to make it more prominent */
-  font-weight: bold; /* add bold font weight to make it more eye-catching */
-  color: #333; /* darken the text color to make it more readable */
-  margin-right: 20px; /* increase margin to make room for the settings button */
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Center the element itself */
+  font-size:20px; /* Adjusted font size for better fit */
+  font-weight: bolder; 
 }
+
+/* Settings Button Styles */
 
 #opensetting {
   background-color: #4CAF50;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 18px; /* increase font size to make it more prominent */
-  font-weight: bold; /* add bold font weight to make it more eye-catching */
+  padding: 5px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
   cursor: pointer;
-  border-radius: 5px; /* add a subtle border radius to make it more rounded */
-  box-shadow: 0 0 2px #000; /* add a subtle box shadow to make it pop */
+  border-radius: 5px; 
 }
 
 #opensetting:hover {
   background-color: #3e8e41;
 }
 
+
+
 /* Input Styles */
 
 .input-values {
-  margin-top: 20px;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  margin-top: 10px; 
+  
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+input {
+  width: 80px; /* Set a specific width for the input field */
+  padding: 5px; /* Smaller padding */
+  border: none; /* Add a subtle border for visibility */
+  outline: none;
+  border-bottom:  2px solid black;
+  text-align: center;
+  size: 3px;
+  font-size: 2em;
+  font-weight: bold;
+
 }
 
 /* Error Styles */
 
 #error {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+   color: red;
+   font-size: 12px; /* Smaller font size for error messages */
+   margin-top: 5px; /* Reduced margin */
 }
 
 /* Footer Styles */
 
 .main-footer {
-  padding: 10px;
-  border-top: 1px solid #ccc;
-  text-align: center;
+   text-align: center; 
+   margin-top:10px; 
 }
 
+/* Content Minute Styles */
+
 #contentminute {
-  font-size: 18px;
-  font-weight: bold;
+   font-size:20px; 
+   font-weight:bolder; 
 }
 
 /* Button Styles */
 
 .main-button {
-  margin-top: 20px;
-  text-align: center;
+   margin-top:10px; 
+   text-align:center; 
 }
 
 #contentbutton1 {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+   background-color:#4CAF50; 
+   color:#fff; 
+   border:none; 
+   padding:5px; /* Smaller button size */
+   font-size:14px; 
+   cursor:pointer; 
+   border-radius:5px; 
 }
 
 #contentbutton1:hover {
-  background-color: #3e8e41;
+   background-color:#3e8e41; 
 }
 
 /* Dropdown Styles */
 
 #myDropdown {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+   width: 20px; /* Set to auto for smaller size */
+    margin-right: 10px;
+    margin-bottom: 30px;
+   font-size:14px; /* Smaller font size */ 
+   border:none; 
 }
+
+/* Stop Button Styles */
 
 #mainstop {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+   background-color:#ff0000; 
+   color:#fff; 
+   border:none; 
+   padding:5px; /* Smaller button size */
+   font-size:14px; 
+   cursor:pointer; 
 }
 
-/* Add a wrapper div to center the stop button */
+/* Stop Button Wrapper */
+
 .stop-button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; /* add some margin to separate from other elements */
+   display:flex; 
+   justify-content:center; 
+   margin-top:10px; /* Margin to separate from other elements */ 
 }

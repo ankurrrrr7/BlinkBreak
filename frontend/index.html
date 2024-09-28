@@ -12,12 +12,15 @@
             <h2 id="content">
                 DON'T FORGET TO BLINK YOUR EYES AFTER
             </h2>
-            <button id="opensetting">Settings</button>
+            <select id="myDropdown" aria-placeholder="Lang">
+                <option value="en">english</option>
+                <option value="hindi">hindi</option>
+            </select>
         </div>
         <div id="input-values" class="input-values">
-            <input type="number">
+            <input>
         </div>
-        <div id="error"></div>
+        
         <div id="main-footer" class="main-footer">
             <h2 id="contentminute">MINUTES</h2>
         </div>
@@ -27,7 +30,9 @@
         <div class="stop-button-wrapper">
             <button id="mainstop">Stop</button>
         </div>
-     
+        <div id="error"></div>
+        <div id="update"></div>
+       
         
     </div>
     <script src="/backend/transalator.js"></script>
