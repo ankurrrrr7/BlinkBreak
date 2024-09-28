@@ -34,37 +34,34 @@ body {
 }
 
 #content {
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Center the element itself */
-  font-size:20px; /* Adjusted font size for better fit */
-  font-weight: bolder; 
+  text-align: center; /* Center the text */
+  margin: 0 auto; /* Center the element itself */
+  font-size: 20px; /* Adjusted font size for better fit */
+  font-weight: bolder;
 }
 
 /* Settings Button Styles */
 
 #opensetting {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   border: none;
   padding: 5px; /* Smaller padding */
   font-size: 14px; /* Smaller font size */
   cursor: pointer;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 #opensetting:hover {
   background-color: #3e8e41;
 }
 
-
-
 /* Input Styles */
 
 .input-values {
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Center horizontally */
-  margin-top: 10px; 
-  
+  margin-top: 10px;
 }
 
 input {
@@ -72,82 +69,81 @@ input {
   padding: 5px; /* Smaller padding */
   border: none; /* Add a subtle border for visibility */
   outline: none;
-  border-bottom:  2px solid black;
+  border-bottom: 2px solid black;
   text-align: center;
   size: 3px;
   font-size: 2em;
   font-weight: bold;
-
 }
 
 /* Error Styles */
 
 #error {
-   color: red;
-   font-size: 12px; /* Smaller font size for error messages */
-   margin-top: 5px; /* Reduced margin */
+  color: red;
+  font-size: 12px; /* Smaller font size for error messages */
+  margin-top: 5px; /* Reduced margin */
 }
 
 /* Footer Styles */
 
 .main-footer {
-   text-align: center; 
-   margin-top:10px; 
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Content Minute Styles */
 
 #contentminute {
-   font-size:20px; 
-   font-weight:bolder; 
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 /* Button Styles */
 
 .main-button {
-   margin-top:10px; 
-   text-align:center; 
+  margin-top: 10px;
+  text-align: center;
 }
 
 #contentbutton1 {
-   background-color:#4CAF50; 
-   color:#fff; 
-   border:none; 
-   padding:5px; /* Smaller button size */
-   font-size:14px; 
-   cursor:pointer; 
-   border-radius:5px; 
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px; /* Smaller button size */
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 #contentbutton1:hover {
-   background-color:#3e8e41; 
+  background-color: #3e8e41;
 }
 
 /* Dropdown Styles */
 
 #myDropdown {
-   width: 20px; /* Set to auto for smaller size */
-    margin-right: 10px;
-    margin-bottom: 30px;
-   font-size:14px; /* Smaller font size */ 
-   border:none; 
+  width: 20px; /* Set to auto for smaller size */
+  margin-right: 10px;
+  margin-bottom: 30px;
+  font-size: 14px; /* Smaller font size */
+  border: none;
 }
 
 /* Stop Button Styles */
 
 #mainstop {
-   background-color:#ff0000; 
-   color:#fff; 
-   border:none; 
-   padding:5px; /* Smaller button size */
-   font-size:14px; 
-   cursor:pointer; 
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px; /* Smaller button size */
+  font-size: 14px;
+  cursor: pointer;
 }
 
 /* Stop Button Wrapper */
 
 .stop-button-wrapper {
-   display:flex; 
-   justify-content:center; 
-   margin-top:10px; /* Margin to separate from other elements */ 
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Margin to separate from other elements */
 }

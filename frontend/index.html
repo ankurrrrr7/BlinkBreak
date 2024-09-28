@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Reducer App</title>
-    <link rel="stylesheet" href="/frontend/style.css"> <!-- External CSS file -->
-</head>
-<body>
+    <link rel="stylesheet" href="/frontend/style.css" />
+    <!-- External CSS file -->
+  </head>
+  <body>
     <div class="main">
-        <div class="main-header">
-            <h2 id="content">
-                DON'T FORGET TO BLINK YOUR EYES AFTER
-            </h2>
-            <select id="myDropdown" aria-label="Language Selector">
-                <option value="en">Default (English)</option>
-                <option value="hindi">हिन्दी</option>
-            </select>
-        </div>
-        <div id="input-values" class="input-values">
-            <input id="inputField">
-        </div>
-        
-        <div id="main-footer" class="main-footer">
-            <h2 id="contentminute">MINUTES</h2>
-        </div>
-        <div id="main-button" class="main-button">
-            <button id="contentbutton1">Remind Me!!</button>
-        </div>
-        <div class="stop-button-wrapper">
-            <button id="mainstop">Stop</button>
-        </div>
-        <div id="error"></div>
-        <div id="update"></div>
-       
-        
+      <div class="main-header">
+        <h2 id="content">DON'T FORGET TO BLINK YOUR EYES AFTER</h2>
+        <select id="myDropdown" aria-label="Language Selector">
+          <option value="en">Default (English)</option>
+          <option value="hindi">हिन्दी</option>
+        </select>
+      </div>
+      <div id="input-values" class="input-values">
+        <input id="inputField" />
+      </div>
+
+      <div id="main-footer" class="main-footer">
+        <h2 id="contentminute">MINUTES</h2>
+      </div>
+      <div id="main-button" class="main-button">
+        <button id="contentbutton1">Remind Me!!</button>
+      </div>
+      <div class="stop-button-wrapper">
+        <button id="mainstop">Stop</button>
+      </div>
+      <div id="error"></div>
+      <div id="update"></div>
     </div>
     <script src="/backend/transalator.js"></script>
-    
+
     <script type="module" src="/backend/main.js"></script>
     <script src="/backend/background.js"></script>
-</body>
+  </body>
 </html>
