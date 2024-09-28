@@ -16,7 +16,7 @@ const translator = {
         mainstop: "Stop"
     },
     hindi: {
-        content: "इसके बाद अपनी आंखें झपकाना न भूलें",
+        content: "अपनी आंखें झपकाना न भूलें",
         contentminute: "मिनट",
         contentbutton1: "मुझे याद दिलाएं!!",
         mainstop: "रोकिये"
@@ -50,9 +50,7 @@ window.switchLanguage = (language) => {
 };
 
 languageSelector.addEventListener("change", (event) => {
-   const selectedLanguage = switchLanguage(event.target.value);
-   switchLanguage(selectedLanguage);
-   localStorage.setItem("setLanguage", selectedLanguage);
+    switchLanguage(event.target.value);
 });
 
-
+switchLanguage('en');

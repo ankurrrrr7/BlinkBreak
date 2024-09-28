@@ -1,6 +1,4 @@
 
-let intervalId; // To store the interval ID globally
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
@@ -22,12 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
-
-//back to new settings
-// handle notification
-const mainNotification = ()=>{
+// mainNotification and updateNotification functions
+const mainNotification = () => {
     chrome.notifications.create({
         type: 'basic',
         iconUrl: '/logo.png', 
@@ -36,66 +30,78 @@ const mainNotification = ()=>{
         priority: 2
     });
 }
-const updateNotification =()=>{
+
+const updateNotification = () => {
     chrome.notifications.create({
         type: 'basic',
         iconUrl: '/logo.png', 
         title: 'Update',
-        message: 'Blink remainder is stopped',
+        message: 'Blink reminder is stopped',
         priority: 2
     });
 }
-// main click logic 
-document.addEventListener('click',()=>{
-    document.getElementById("main-button").addEventListener("click", () => {
-        // Get the input value in seconds
-        const input_value = document.getElementById('input-values').querySelector('input').value;
-        const user_time = parseInt(input_value); 
-    
-        if (!user_time || isNaN(user_time) || user_time <= 0) {
-            remainder();
-            return;
-        }
-    
-        // Clear the previous interval, if one exists
-        if (intervalId) {
-            clearInterval(intervalId);
-            console.log("Previous interval cleared.");
-        }
-        
-        intervalId = setInterval(() => {
-            mainNotification();
-        }, user_time * 1000); // Convert seconds to milliseconds
-    
-        console.log(`New interval set for ${user_time} seconds.`);
-    });
-})
 
+// Main click logic
+let warningShow = false;
+let intervalId = null;
 
-//notification stop
+// Wait until the DOM is fully loaded to attach event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    const stopButton = document.getElementById('mainstop');
-    if (stopButton) { // Check if the element exists
+    const contentButton = document.getElementById("contentbutton1");
+    const stopButton = document.getElementById("mainstop");
+
+    // Ensure the button exists in the DOM before attaching the event listener
+    if (contentButton) {
+        contentButton.addEventListener("click", () => {
+            // Get the input value in seconds
+            const input_value = document.getElementById('input-values').querySelector('input').value;
+            const user_time = parseInt(input_value);
+
+            if (!user_time || isNaN(user_time) || user_time <= 0) {
+                remainder();
+                return;
+            }
+
+            // Clear the previous interval, if one exists
+            if (intervalId) {
+                clearInterval(intervalId);
+                console.log("Previous interval cleared.");
+            }
+            
+           
+            intervalId = setInterval(() => {
+                mainNotification();
+            }, user_time * 60000); // Convert seconds to milliseconds
+
+           console.log(update()); 
+        });
+    }
+
+    // Stop notification logic
+    if (stopButton) {
         stopButton.addEventListener('click', () => {
-            clearInterval(intervalId);
-            updateNotification();
+            if (intervalId) {
+                clearInterval(intervalId);
+                updateNotification();
+                console.log("Interval stopped.");
+            } else {
+                console.log("No interval to stop.");
+            }
         });
     } else {
         console.log("The mainstop element is not found in the DOM.");
     }
 });
 
-
-// remainder
+// Remainder function
 const remainder = () => {
     // Check if the error message already exists to prevent duplicate messages
     if (!document.getElementById('error-message')) {
         const newChild = document.createElement("div");
-        const updateChild = "Please enter a valid number of seconds";
-        newChild.textContent = updateChild;
-
-        // Set an ID and styling for the error message
         newChild.id = "error-message";
+        newChild.textContent = "Please enter a valid number of seconds";
+
+        // Set styling for the error message
         newChild.style.color = "red";
         newChild.style.marginTop = "10px";
         newChild.style.fontSize = "14px";
@@ -104,20 +110,41 @@ const remainder = () => {
         const inputChild = document.getElementById("error");
         inputChild.appendChild(newChild);
 
-        setTimeout(()=>{
-           inputChild.style.display ='none'
-        },3000);
+        if (!warningShow) {
+            warningShow = true; // Set this to true
+
+            // Hide the error message after 3 seconds
+            setTimeout(() => {
+                newChild.remove(); // Remove the specific error message
+                warningShow = false; // Reset the flag so the message can show again if needed
+            }, 3000);
+        }
     }
 };
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLanguage = localStorage.getItem("setLanguage") || 'en'; // Default to English
-    languageSelector.value = savedLanguage; // Set dropdown value
-    switchLanguage(savedLanguage); // Switch to the saved language
-});
 
+const update =()=>{
+    if(document.getElementById("update-message")){
+        const newChild = document.createElement("div");
+        newChild.id = "update-message";
+        newChild.textContent ="Your Remainder has been set!!"
+    
+        newChild.style.color = "red";
+        newChild.style.marginTop = "10px";
+        newChild.style.fontSize = "14px";
 
+        const inputChild = document.getElementById("update");
+        inputChild.append(newChild)
+        
+        
+        if (!warningShow) {
+            warningShow = true; // Set this to true
 
+            // Hide the error message after 3 seconds
+            setTimeout(() => {
+                newChild.remove(); // Remove the specific error message
+                warningShow = false; // Reset the flag so the message can show again if needed
+            }, 3000);
+        };
 
-
-
-
+    }
+}
