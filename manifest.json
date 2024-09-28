@@ -4,7 +4,8 @@
     "description": "A Chrome extension that helps protect your eyes!!",
     "manifest_version": 3,
     "author": "Ankur Jha",
-    "permissions": ["notifications"],
+    "permissions": ["notifications",
+                    "storage" ],
     "action": {
         "default_popup": "/frontend/index.html",
         "default_title": "Blink Break"
