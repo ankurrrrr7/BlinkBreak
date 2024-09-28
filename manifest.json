@@ -5,7 +5,7 @@
     "manifest_version": 3,
     "author": "Ankur Jha",
     "permissions": ["notifications",
-                    "storage" ],
+                    "storage","tabs", "activeTab", "background","alarms"],
     "action": {
         "default_popup": "/frontend/index.html",
         "default_title": "Blink Break"
