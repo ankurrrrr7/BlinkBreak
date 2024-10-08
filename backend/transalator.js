@@ -11,6 +11,12 @@ const translator = {
     contentbutton1: "मुझे याद दिलाएं!!",
     mainstop: "रोकिये",
   },
+  french: {
+    content :"N'OUBLIEZ PAS DE CLIGNOIR LES YEUX APRÈS",
+    contentminute: "MINUTES",
+    contentbutton1: "Rappelez-moi !!",
+    mainstop: "Arrêt"
+  },
 };
 
 // Cache DOM elements for easy access
